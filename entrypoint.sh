@@ -29,6 +29,6 @@ if [ $ACTION = "REVIEW_REQUESTED" ]; then
 fi
 
 if [ $ACTION = "REVIEWED" ]; then
-    add_label "$reviewed"
     remove_label "$pending_review"
+    add_label "$reviewed"
 fi
