@@ -9,7 +9,7 @@ LABEL version="0.0.1"
 LABEL repository="https://github.com/justia/ga-add-remove-label"
 LABEL homepage="https://github.com/justia/ga-add-remove-label"
 
-RUN apk add --no-cache bash curl jq
+RUN apk add --no-cache bash curl jq && rm -rf /var/lib/apt/lists/*
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 RUN chmod +x /entrypoint.sh
