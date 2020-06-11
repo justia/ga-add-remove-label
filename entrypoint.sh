@@ -21,7 +21,7 @@ function remove_label() {
       -H "Authorization: token ${GITHUB_TOKEN}" \
       -H "Accept: application/vnd.github.v3+json" \
       -X DELETE \
-      "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${NUMBER}/labels/${1}"
+      "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${NUMBER}/labels/$1"
 }
 
 if [ $ACTION = "REVIEW_REQUESTED" ]; then
