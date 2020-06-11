@@ -17,11 +17,12 @@ function add_label() {
 
 
 function remove_label() {
+    $labelName=${1// /%20}
     curl -sSL \
       -H "Authorization: token ${GITHUB_TOKEN}" \
       -H "Accept: application/vnd.github.v3+json" \
       -X DELETE \
-      "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${NUMBER}/labels/$1"
+      "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${NUMBER}/labels/$labelName"
 }
 
 if [ $ACTION = "REVIEW_REQUESTED" ]; then
